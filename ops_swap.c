@@ -11,15 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   ops_swap.c                                                               */
-/*                                                                            */
-/*   The swap operations: sa, sb, ss.                                         */
-/*   Each one swaps the top two nodes of its stack and prints its own name.   */
-/*   Does nothing if there are fewer than 2 elements (subject requirement).   */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 /*

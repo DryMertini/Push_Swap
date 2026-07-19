@@ -11,15 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   parser_utils.c                                                           */
-/*                                                                            */
-/*   Helper functions for parsing:                                            */
-/*   - is_valid_number : does a string look like an integer literal?          */
-/*   - ft_atoi_safe    : convert AND check for int overflow                   */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 /*

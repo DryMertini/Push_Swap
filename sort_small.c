@@ -11,25 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   sort_small.c                                                             */
-/*                                                                            */
-/*   Hand-tuned sorts for sizes 3, 4, and 5.                                  */
-/*                                                                            */
-/*   sort_three handles all 5 unsorted permutations of 3 elements in <= 3     */
-/*   operations. It's faster and shorter than any general algorithm.          */
-/*                                                                            */
-/*   sort_small (used for sizes 4 and 5) repeatedly:                          */
-/*     - finds the smallest VALUE in a,                                       */
-/*     - rotates a so that value reaches the top (using ra or rra, whichever  */
-/*       is shorter),                                                         */
-/*     - pushes it to b.                                                      */
-/*   After 1 or 2 such pushes we are left with 3 in a, so sort_three. Finally */
-/*   pa everything back — the smallest values come out last, so they end up   */
-/*   on top.                                                                  */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 void	sort_three(t_stack **a)

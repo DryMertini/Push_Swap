@@ -11,19 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   stack_utils2.c                                                           */
-/*                                                                            */
-/*   More stack helpers — kept here so each file stays under 5 functions      */
-/*   (Norm rule). Used by the sort algorithms.                                */
-/*                                                                            */
-/*   - find_min_pos / find_max_pos : 0-indexed position of the smallest /     */
-/*     largest VALUE in the stack. We use VALUE here (not index) because      */
-/*     these are called BEFORE assign_indices in some flows.                  */
-/*   - has_duplicate : used by the parser to reject repeats                   */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 int	find_min_pos(t_stack *stack)

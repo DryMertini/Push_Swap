@@ -11,16 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   ft_split.c                                                               */
-/*                                                                            */
-/*   A libft-style ft_split. Splits a C-string by a single delimiter char     */
-/*   and returns a malloc'd NULL-terminated array of malloc'd substrings.     */
-/*                                                                            */
-/*   This is what lets us parse:  ./push_swap "1 2 3"   (one argv, 3 nums)    */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 static int	count_words(const char *s, char c)

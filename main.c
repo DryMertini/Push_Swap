@@ -10,17 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   main.c                                                                   */
-/*                                                                            */
-/*   Entry point.                                                             */
-/*   1. parse argv into stack a (or print "Error\n" and exit)                 */
-/*   2. assign sorted-rank indices to every node in a                         */
-/*   3. dispatch to the right sort routine based on stack size                */
-/*   4. free everything (no leaks)                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 /*

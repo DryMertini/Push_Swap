@@ -11,15 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   parser.c                                                                 */
-/*                                                                            */
-/*   Turn argv into stack a, validating as we go.                             */
-/*   Accepts both:  ./push_swap 1 2 3   AND   ./push_swap "1 2 3"             */
-/*   Errors: non-numeric, out of int range, empty string, duplicate.          */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 /*

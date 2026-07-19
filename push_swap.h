@@ -11,15 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   push_swap.h                                                              */
-/*                                                                            */
-/*   The single header for the whole project.                                 */
-/*   - declares the t_stack node (a linked-list element)                      */
-/*   - declares every function used across files                              */
-/* ************************************************************************** */
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 

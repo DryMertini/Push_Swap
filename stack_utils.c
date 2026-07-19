@@ -11,18 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   stack_utils.c                                                            */
-/*                                                                            */
-/*   Building blocks for the linked-list "stack":                             */
-/*   - new_node    : malloc and initialize one node                           */
-/*   - add_back    : append at the tail (used while parsing, NOT while sorting)*/
-/*   - free_stack  : free every node and NULL the pointer                     */
-/*   - stack_size  : count nodes                                              */
-/*   - is_sorted   : true if values are strictly increasing top to bottom     */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 t_stack	*new_node(int value)
