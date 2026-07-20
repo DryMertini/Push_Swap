@@ -12,15 +12,7 @@
 
 #include "push_swap.h"
 
-/*
-** Pick the cheapest sort routine for the size we actually have:
-**   size 0..1     -> nothing to do
-**   already sorted -> nothing to do
-**   size 2        -> one sa
-**   size 3        -> hand-written (at most 2 ops)
-**   size 4..5     -> bring min to top, push to b, sort_three, pop back
-**   size >5       -> chunk algorithm (hits the 700 / 5500 benchmarks)
-*/
+/* dispatch: pick the sort routine based on size */
 static void	sort_dispatch(t_stack **a, t_stack **b)
 {
 	int	size;

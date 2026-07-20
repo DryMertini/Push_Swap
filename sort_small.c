@@ -40,10 +40,7 @@ void	sort_three(t_stack **a)
 		rra(a);
 }
 
-/*
-** Bring the smallest VALUE to the top of a using the cheaper rotate.
-** If it's in the top half, use ra; otherwise rra.
-*/
+/* bring the smallest to top using whichever rotate direction is cheaper */
 static void	bring_min_to_top(t_stack **a)
 {
 	int	size;

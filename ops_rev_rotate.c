@@ -6,18 +6,14 @@
 /*   By: maslan <maslan@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 22:16:54 by maslan            #+#    #+#             */
-/*   Updated: 2026/07/18 22:16:55 by maslan           ###   ########.fr       */
+/*   Updated: 2026/07/20 16:01:59 by maslan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
-/*
-** Walk to the SECOND-TO-LAST node. Detach the last. Make it the new head.
-** Before:  A -> B -> C -> D
-** After:   D -> A -> B -> C
-*/
+/* reverse rotate: tail becomes the new head */
 static void	do_rev_rotate(t_stack **stack)
 {
 	t_stack	*before_last;

@@ -17,14 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/*
-** A stack is a linked list of these nodes.
-** - value : the actual integer the user passed on the command line
-** - index : its rank in sorted order (0 = smallest). We assign this once
-**           up front so the sorting algorithm can think in indices instead
-**           of dealing with huge values like 42000000.
-** - next  : pointer to the node below. The "top" of the stack is the head.
-*/
+/* stack node: value = the raw int, index = its sorted rank (0 = smallest) */
 typedef struct s_stack
 {
 	int				value;

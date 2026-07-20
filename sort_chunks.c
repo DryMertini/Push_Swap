@@ -11,31 +11,6 @@
 /* ************************************************************************** */
 
 
-/* ************************************************************************** */
-/*                                                                            */
-/*   sort_chunks.c                                                            */
-/*                                                                            */
-/*   The main algorithm for size > 5. Two phases:                             */
-/*                                                                            */
-/*   PHASE 1 (push everything from a to b, chunk by chunk):                   */
-/*     Indices [0..N-1] are split into chunks of size K. For each chunk:      */
-/*       - rotate a (ra) until the top is in the current chunk                */
-/*       - pb it onto b                                                       */
-/*       - if the pushed index is in the LOWER half of the chunk, also rb to  */
-/*         "sink" it. This pre-orders b: the largest indices end up near the  */
-/*         top, smaller ones get pushed deep.                                 */
-/*                                                                            */
-/*   PHASE 2 (max-first pop-back):                                            */
-/*     Repeatedly: find the MAX value in b, bring it to the top using the     */
-/*     CHEAPER rotation direction (rb or rrb), then pa.                       */
-/*     Why this works: we push values in descending order, so each new top    */
-/*     of a is smaller than the one below. After all pa's, a is sorted        */
-/*     ascending top-to-bottom — no final rotation needed.                    */
-/*                                                                            */
-/*   Tuning: K = 16 for N <= 100, K = 80 for N > 100. Hits the 80%-tier       */
-/*   benchmark: 100 numbers < 700 moves, 500 numbers well under 8500 moves.   */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 static int	get_chunk_size(int size)
@@ -45,10 +20,7 @@ static int	get_chunk_size(int size)
 	return (80);
 }
 
-/*
-** Phase 2: while b is non-empty, find the position of the max value in b,
-** rotate b in the cheaper direction to bring it to the top, then pa.
-*/
+/* phase 2: pull max from b, rotate to top (cheaper way), pa. loop till empty */
 static void	phase_two(t_stack **a, t_stack **b)
 {
 	int	size_b;
@@ -73,10 +45,7 @@ static void	phase_two(t_stack **a, t_stack **b)
 	}
 }
 
-/*
-** Count how many values in stack a have an index inside [lo, hi].
-** Used to know when the current chunk has been fully drained from a.
-*/
+/* how many nodes in a have index in [lo, hi] — tells us when chunk is done */
 static int	count_in_range(t_stack *a, int lo, int hi)
 {
 	int	count;
@@ -91,11 +60,7 @@ static int	count_in_range(t_stack *a, int lo, int hi)
 	return (count);
 }
 
-/*
-** Push every element of a whose index is in [lo, hi] onto b.
-** When the pushed index is in the lower half of the chunk, also rb to
-** sink it deeper — this leaves the larger indices near the top of b.
-*/
+/* push every node in the chunk to b. sink small ones with rb (pre-orders b) */
 static void	process_chunk(t_stack **a, t_stack **b, int lo, int hi)
 {
 	int	remaining;

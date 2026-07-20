@@ -12,14 +12,7 @@
 
 #include "push_swap.h"
 
-/*
-** Generic "move the top of src on top of dst".
-** Step by step:
-**   1. detach the head of src   (moved = src head)
-**   2. advance src to its next  (src = src->next)
-**   3. point moved->next at the current dst head
-**   4. dst head becomes moved
-*/
+/* move top node from src to dst, re-linking */
 static void	do_push(t_stack **dst, t_stack **src)
 {
 	t_stack	*moved;

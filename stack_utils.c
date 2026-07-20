@@ -26,11 +26,7 @@ t_stack	*new_node(int value)
 	return (node);
 }
 
-/*
-** Appends to the tail. We use this only during parsing because we want
-** argv[1] to end up on TOP of stack a. If we add_back each new number,
-** the first number stays at the head — which we treat as the top.
-*/
+/* append to tail so argv[1] stays at head = top of the stack */
 void	add_back(t_stack **stack, t_stack *node)
 {
 	t_stack	*cur;

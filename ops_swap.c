@@ -6,19 +6,14 @@
 /*   By: maslan <maslan@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 22:17:10 by maslan            #+#    #+#             */
-/*   Updated: 2026/07/18 22:17:11 by maslan           ###   ########.fr       */
+/*   Updated: 2026/07/20 16:01:46 by maslan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
-/*
-** Linked-list swap: we don't move data, we re-link pointers.
-** Before:   A -> B -> rest
-** After:    B -> A -> rest
-** The caller's pointer to the head is updated to point at B.
-*/
+/* swap first two nodes by re-linking pointers, no data copy */
 static void	do_swap(t_stack **stack)
 {
 	t_stack	*first;
@@ -45,10 +40,7 @@ void	sb(t_stack **b)
 	write(1, "sb\n", 3);
 }
 
-/*
-** ss does sa and sb together — but it is ONE printed operation, not two.
-** That's why we call do_swap twice but write "ss\n" only once.
-*/
+/* ss = sa + sb, counts as ONE op so we only write "ss\n" once */
 void	ss(t_stack **a, t_stack **b)
 {
 	do_swap(a);

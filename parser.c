@@ -13,12 +13,7 @@
 
 #include "push_swap.h"
 
-/*
-** Tries to read every token in one argv[i] (which may contain spaces).
-** Returns 1 on success, 0 on any error.
-** On success it appends one node per number to *a (in argv order — so the
-** first argv ends up at the TOP of the stack, as the subject requires).
-*/
+/* parse one argv, may have multiple nums if quoted. returns 1 ok, 0 fail */
 static int	parse_one_arg(const char *arg, t_stack **a)
 {
 	char	**tokens;

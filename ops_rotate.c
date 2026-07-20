@@ -13,11 +13,7 @@
 
 #include "push_swap.h"
 
-/*
-** Walk to the tail. Detach the head. Re-attach the head as the new tail.
-** Before:  A -> B -> C -> D
-** After:   B -> C -> D -> A
-*/
+/* rotate up: head becomes the new tail */
 static void	do_rotate(t_stack **stack)
 {
 	t_stack	*old_head;

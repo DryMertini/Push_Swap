@@ -13,10 +13,7 @@
 
 #include "push_swap.h"
 
-/*
-** Accepts an optional single '+' or '-' followed by at least one digit.
-** Rejects empty string, leading whitespace, multiple signs, letters, etc.
-*/
+/* looks like an int? sign optional, at least one digit, nothing else */
 int	is_valid_number(const char *str)
 {
 	int	i;
@@ -37,12 +34,7 @@ int	is_valid_number(const char *str)
 	return (1);
 }
 
-/*
-** Parses a string into an int.
-** *ok is set to 1 on success, 0 if the string is malformed or out of range.
-** We accumulate the absolute value into a long so we can spot anything
-** that would overflow int (INT_MIN = -2147483648, INT_MAX = 2147483647).
-*/
+/* atoi with overflow check. use long so we notice if the number blows past int */
 int	ft_atoi_safe(const char *str, int *ok)
 {
 	long	result;
