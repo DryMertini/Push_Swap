@@ -243,16 +243,6 @@ Classic references used while building this project:
 - 42 community write-ups on the chunk / Turk approach.
 - The provided `checker_OS` binary — used for verification throughout development.
 
-### How AI was used
-
-AI was used as a study aid, not as a code generator:
-
-- **Concept walk-throughs** — what each operation does, the difference between a linked-list stack and an array stack, complexity vocabulary, why the Norm rules exist.
-- **Algorithm trade-off discussion** — comparing the simple max-first phase 2 against cost-based selection. I measured both against the checker myself and committed to the simpler one for defensibility.
-- **Defense rehearsal** — practicing answers to the questions a peer evaluator is likely to ask.
-
-Every function in this codebase was written and understood line-by-line. I can explain each one in plain words during the defense.
-
 ---
 
 <p align="center">
