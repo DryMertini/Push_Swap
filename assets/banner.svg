@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" role="img" aria-label="push_swap project banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="g-push" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="g-swap" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="line-glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#7c3aed" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="900" height="320" fill="url(#bg)"/>
+
+  <!-- decorative side stack columns (a and b) -->
+  <g font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="13" fill="#30363d">
+    <text x="60" y="80">stack a</text>
+    <g transform="translate(60, 95)">
+      <rect width="40" height="22" fill="#21262d" stroke="#30363d" rx="3"/>
+      <text x="20" y="16" text-anchor="middle" fill="#7d8590">3</text>
+      <rect y="26" width="40" height="22" fill="#21262d" stroke="#30363d" rx="3"/>
+      <text x="20" y="42" text-anchor="middle" fill="#7d8590">1</text>
+      <rect y="52" width="40" height="22" fill="#21262d" stroke="#30363d" rx="3"/>
+      <text x="20" y="68" text-anchor="middle" fill="#7d8590">8</text>
+      <rect y="78" width="40" height="22" fill="#21262d" stroke="#30363d" rx="3"/>
+      <text x="20" y="94" text-anchor="middle" fill="#7d8590">5</text>
+      <rect y="104" width="40" height="22" fill="#21262d" stroke="#30363d" rx="3"/>
+      <text x="20" y="120" text-anchor="middle" fill="#7d8590">2</text>
+    </g>
+
+    <text x="800" y="80">stack b</text>
+    <g transform="translate(800, 95)">
+      <rect width="40" height="22" fill="#21262d" stroke="#30363d" rx="3"/>
+      <text x="20" y="16" text-anchor="middle" fill="#7d8590">7</text>
+      <rect y="26" width="40" height="22" fill="#21262d" stroke="#30363d" rx="3"/>
+      <text x="20" y="42" text-anchor="middle" fill="#7d8590">4</text>
+      <rect y="52" width="40" height="22" fill="#21262d" stroke="#30363d" rx="3"/>
+      <text x="20" y="68" text-anchor="middle" fill="#7d8590">6</text>
+    </g>
+  </g>
+
+  <!-- the title — PUSH and SWAP swap positions (like an sa op on the title itself) -->
+  <g font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-weight="900" font-size="100" text-anchor="middle" filter="url(#soft-glow)">
+    <text fill="url(#g-push)" x="280" y="165">
+      <animate attributeName="x"
+               values="280;280;620;620;280"
+               keyTimes="0;0.42;0.5;0.92;1"
+               dur="7s"
+               repeatCount="indefinite"
+               calcMode="spline"
+               keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"/>
+      PUSH
+    </text>
+
+    <text fill="#6e7681" x="450" y="165">_</text>
+
+    <text fill="url(#g-swap)" x="620" y="165">
+      <animate attributeName="x"
+               values="620;620;280;280;620"
+               keyTimes="0;0.42;0.5;0.92;1"
+               dur="7s"
+               repeatCount="indefinite"
+               calcMode="spline"
+               keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"/>
+      SWAP
+    </text>
+  </g>
+
+  <!-- gradient underline -->
+  <rect x="150" y="200" width="600" height="2" fill="url(#line-glow)"/>
+
+  <!-- subtitle -->
+  <text x="450" y="232" fill="#8b949e" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="14" text-anchor="middle" letter-spacing="6">
+    A STACK-BASED SORTING ALGORITHM
+  </text>
+
+  <text x="450" y="262" fill="#6e7681" font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="13" text-anchor="middle">
+    sort the stack using the smallest possible number of operations
+  </text>
+
+  <!-- bottom op-tags -->
+  <g font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace" font-size="12" fill="#6e7681">
+    <g transform="translate(160, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">sa</text>
+    </g>
+    <g transform="translate(216, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">sb</text>
+    </g>
+    <g transform="translate(272, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">pa</text>
+    </g>
+    <g transform="translate(328, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">pb</text>
+    </g>
+    <g transform="translate(384, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">ra</text>
+    </g>
+    <g transform="translate(440, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">rb</text>
+    </g>
+    <g transform="translate(496, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">rr</text>
+    </g>
+    <g transform="translate(552, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">rra</text>
+    </g>
+    <g transform="translate(608, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">rrb</text>
+    </g>
+    <g transform="translate(664, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">rrr</text>
+    </g>
+    <g transform="translate(720, 285)">
+      <rect width="48" height="22" rx="11" fill="#21262d" stroke="#30363d"/>
+      <text x="24" y="15" text-anchor="middle">ss</text>
+    </g>
+  </g>
+</svg>

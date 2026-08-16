@@ -256,5 +256,5 @@ Every function in this codebase was written and understood line-by-line. I can e
 ---
 
 <p align="center">
-  <sub>built for 42 · <a href="https://github.com/">github.com/maslan</a></sub>
+  <sub>built for 42 · <a href="https://github.com/DryMertini">github.com/DryMertini</a></sub>
 </p>
